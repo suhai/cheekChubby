@@ -10,10 +10,10 @@
 
 class Category < ApplicationRecord
   has_many :photos
-  validates :image_title, presence: true
+  # validates :image_title, presence: true
 
   has_many :posts
-  validates :name, presence: true
+  # validates :name, presence: true
 
   def self.search(query)
     # where("name like ?", "%#{query}%")
