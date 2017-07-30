@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'upload' => 'photos#new', :as => :upload
   resources :categories, only: [:show, :index]
   resources :photo_comments, only: [:show, :create]
-  resources :photos, only: [:show]
+  resources :photos
   resources :post_comments, only: [:show, :create]
   resources :posts, only: [:index, :show]
 
