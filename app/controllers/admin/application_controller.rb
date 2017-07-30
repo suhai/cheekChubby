@@ -1,7 +1,13 @@
-protect_from_forgery with: :exception
-  layout 'admin/application'
+class Admin::ApplicationController < ActionController::Base
+	# protect_from_forgery with: :exception
+	layout 'admin/application'
 
-  helper_method :current_user
+	helper_method :current_user
+	
+	def index
+		@categories = Category.all
+	end
+
 
   private
   	def current_user
@@ -13,3 +19,5 @@ protect_from_forgery with: :exception
   		redirect_to admin_login_path
   	end
   end
+end
+  

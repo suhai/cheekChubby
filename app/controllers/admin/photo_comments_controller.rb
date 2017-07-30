@@ -1,2 +1,2 @@
-class Admin::PhotoCommentsController < ApplicationController
+class Admin::PhotoCommentsController < Admin::ApplicationController
 end

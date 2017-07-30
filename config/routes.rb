@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:show]
+
+  resources :categories, only: [:show, :index]
   resources :photo_comments, only: [:show, :create]
   resources :photos, only: [:show]
   resources :post_comments, only: [:show, :create]
-  resources :posts, only: [:show]
+  resources :posts, only: [:index, :show]
 
   resources :posts do
     resources :post_comments

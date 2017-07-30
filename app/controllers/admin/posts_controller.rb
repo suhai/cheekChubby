@@ -1,5 +1,5 @@
-class Admin::PostsController < ApplicationController
-  before_filter :verify_logged_in
+class Admin::PostsController < Admin::ApplicationController
+  # before_filter :verify_logged_in
 
   def index
     if params[:search]
