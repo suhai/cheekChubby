@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id                 :integer          not null, primary key
+#  image              :string
+#  image_title        :string
+#  image_file_size    :string
+#  image_content_type :string
+#  image_description  :string
+#  category_id        :integer
+#  user_id            :integer
+#  tags               :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  image_title: MyString
+  image_file_size: MyString
+  image_content_type: MyString
+  image_description: MyString
+  category: one
+  user: one
+  tags: MyText
+
+two:
+  image: MyString
+  image_title: MyString
+  image_file_size: MyString
+  image_content_type: MyString
+  image_description: MyString
+  category: two
+  user: two
+  tags: MyText
