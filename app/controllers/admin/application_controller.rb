@@ -1,8 +1,10 @@
 class Admin::ApplicationController < ActionController::Base
-	# protect_from_forgery with: :exception
+	before_action :getCategoryNav
+	protect_from_forgery with: :exception
 	layout 'admin/application'
 
 	helper_method :current_user
+	helper_method :getCategoryNav
 
 
 	private

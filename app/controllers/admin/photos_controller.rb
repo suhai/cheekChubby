@@ -1,5 +1,5 @@
 class Admin::PhotosController < Admin::ApplicationController
-  before_action :verify_logged_in
+  # before_action :verify_logged_in
   
   def index
     if params[:search]
@@ -18,7 +18,7 @@ class Admin::PhotosController < Admin::ApplicationController
     @photo = Photo.new(photo_params)
     if @photo.save
       flash[:notice] = "Photo Created"
-      redirect_to root_path
+      redirect_to admin_photos_path
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class Admin::PhotosController < Admin::ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     flash[:notice] = "Photo Removed"
-    redirect_to images_path
+    redirect_to admin_photos_path
   end
 
 

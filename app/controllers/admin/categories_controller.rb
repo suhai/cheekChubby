@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::ApplicationController
-  before_action :verify_logged_in
+  # before_action :verify_logged_in
 
   def index
     if params[:search]
@@ -7,6 +7,12 @@ class Admin::CategoriesController < Admin::ApplicationController
     else
       @categories = Category.all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
     end
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @categories = Category.all
+    @photos = @category.photos
   end
 
   def new
@@ -24,11 +30,11 @@ class Admin::CategoriesController < Admin::ApplicationController
     end
   end
 
-  # def show
-  # end
 
   def edit
     @category = Category.find(params[:id])
+    @categories = Category.all
+    @photoss = @category.photos
   end
 
   def update
@@ -37,7 +43,7 @@ class Admin::CategoriesController < Admin::ApplicationController
       flash[:notice] = 'Category updated'
       redirect_to admin_categories_path
     else    
-      render 'new'
+      render 'edit'
     end
   end
 

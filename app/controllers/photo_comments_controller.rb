@@ -9,6 +9,6 @@ class PhotoCommentsController < ApplicationController
 
   private
   def photo_comment_params
-    params.require(:photo_comment).permit(:user_id, :body, :photo_id)
+    params.require(:photo_comment).permit(:user_id, :body, :photo_id, :photo)
   end
 end

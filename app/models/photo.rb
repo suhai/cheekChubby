@@ -25,12 +25,13 @@ class Photo < ApplicationRecord
     foreign_key: :category_id,
     class_name: :Category
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :image, PhotoUploader
 	before_save :update_photo_attributes
+
 
 	private
 	def update_photo_attributes
-		if photo.present? && photo_changed?
+		if image.present? && image_changed?
 			self.image_content_type = image.file.content_type
 			self.image_file_size = image.file.size
 		end

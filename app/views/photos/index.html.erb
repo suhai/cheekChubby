@@ -1,22 +1,24 @@
+<%= render 'partials/image' %>
+
 <div id="gallery">
   <h2>All Photos</h2>
   <% if @photos.exists? %>
 
-    <% @photos.each_slice(4) do |photo| %>
+    <% @photos.each_slice(4) do |images| %>
       <div class="row">
       
-        <% photo.each do |photo| %>
+        <% images.each do |image| %>
           <div class="col-md-3">
             <div class="photo photo-type-line">
-              <a href="<%= photo.image_url() %>" class="photo-hover"  data-lightbox="my-images" data-title="<%= photo.image_title %>">
+              <a href="<%= image.image_url() %>" class="photo-hover"  data-lightbox="my-images" data-title="<%= image.image_title %>">
                 <div class="photo-info">
-                  <div class="headline"><%= photo.image_title %></div>
+                  <div class="headline"><%= image.image_title %></div>
                   <div class="line"></div>
-                  <div class="desc"><%= photo.image_description %></div>
+                  <div class="desc"><%= image.image_description %></div>
                 </div>
                 <div class="mask"></div>
               </a>
-              <div class="photo-img"><%= image_tag photo.image_url(:thumb)%></div>
+              <div class="photo-img"><%= image_tag image.image_url(:thumb) unless image.image.blank? %></div>
             </div>
           </div>     
         <% end %>

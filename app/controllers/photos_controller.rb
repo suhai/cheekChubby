@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     if @photo.save
       flash[:notice] = "Photo Created"
-      redirect_to root_path
+      redirect_to photos_path
     else
       render 'new'
     end
@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     flash[:notice] = "Photo Removed"
-    redirect_to images_path
+    redirect_to photos_path
   end
 
   def index
