@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>CheekChubby</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -43,9 +43,7 @@
           <div id="user_nav" class="pull-right"> 
             <% if current_user %>
               Logged In as <%= current_user.name %>
-              <%= link_to 'Log Out', admin_logout_path %>
-            <% else %>
-              <%= link_to 'Log In', admin_login_path %>
+              <%= link_to 'Log Out', admin_logout_path, class:'btn btn-info' %>
             <% end %>
           </div>
 
@@ -63,8 +61,9 @@
       </div>
     </section>
 
-    <footer>
-      <p>Copyright &copy: 2017, Blog | <%= link_to "Frontend", root_path, target: '_blank' %></p>
-    </footer>
+    <%= render 'partials/footer' %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
   </body>
 </html>
