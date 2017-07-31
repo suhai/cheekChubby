@@ -1,25 +1,8 @@
-# == Schema Information
-#
-# Table name: posts
-#
-#  id          :integer          not null, primary key
-#  title       :string
-#  user_id     :integer
-#  category_id :integer
-#  body        :text
-#  image       :string
-#  tags        :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#
-
 class Post < ApplicationRecord
-  belongs_to :user
   belongs_to :category
-
+  belongs_to :user
   has_many :post_comments
-  # has_attached_file :image, :default_url => ":style/rails1.jpg"
-  has_attached_file :image, :default_url => ""
+  has_attached_file :image, :default_url => "https://res.cloudinary.com/swy/image/upload/v1499749857/images/student.svg"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   validates :title, presence: true

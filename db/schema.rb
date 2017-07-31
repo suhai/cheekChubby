@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730081506) do
+ActiveRecord::Schema.define(version: 20170731072852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,11 +60,14 @@ ActiveRecord::Schema.define(version: 20170730081506) do
     t.string "title"
     t.bigint "user_id"
     t.bigint "category_id"
+    t.string "tags"
     t.text "body"
-    t.string "image"
-    t.text "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -83,7 +86,6 @@ ActiveRecord::Schema.define(version: 20170730081506) do
   add_foreign_key "photo_comments", "users"
   add_foreign_key "photos", "categories"
   add_foreign_key "photos", "users"
-  add_foreign_key "post_comments", "posts"
   add_foreign_key "post_comments", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"

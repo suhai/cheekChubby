@@ -1,24 +1,24 @@
-<h2 class="page-header">All Posts</h2>
+<div id="posts-index">
 <% if @posts.exists? %>
-  <table class="table table-striped">
-    <tr>
-      <th>Post Title</th>
-      <th>Post Category</th>
-      <th>Date Created</th>
-      <th>Actions</th>
-    </tr>
-
-    <% @posts.each do |post|%>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.category.name %></td>
-      <td><%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
-      <td><%= link_to "Edit", edit_admin_post_path(post), class:'btn btn-primary'   %> <%= link_to "Delete", admin_post_path(post), class:'btn btn-danger',   method: :delete, data: {confirm: 'Are you sure?'}  %></td>
-    </tr>
-    <% end %>
-  </table>
-  <%= will_paginate @posts %>
-<% else %>
-  <p>There are no posts.</p>
-<% end %>
+  <% @posts.each_slice(2) do |post| %>
+    <div class="row">
+      <% post.each do |post| %>
+        <div class="col-md-6">
+          <div class="post">
+            <%= image_tag post.image.url, width:'100%' %>
+            <div class="post-content">
+              <h3><%= post.title %></h3>
+              <small>Posted by <%= post.user.username %> on <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></small>
+              <%= raw post.body.truncate(80) %>
+              <%= link_to "Read More", post_path(post), class:'btn btn-primary' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <% else %>
+    <p>No Posts yet</p>
+  <% end %>
+</div>
 

@@ -1,7 +1,7 @@
 <!-- Comments -->
 <div class="comments">
-  <h2 claass="page-header"><%= @post.post_comments.length %> Comments</h2>
-  <% @post.post_comments.each do |comment| %>
+  <h2 claass="page-header"><%= @post.comments.length %> Comments</h2>
+  <% @post.comments.each do |comment| %>
   <div class="comment">
     <div class="row">
       <div class="col-md-2">
@@ -9,8 +9,8 @@
       </div>
       <div class="col-md-10">
         <div class="well">
-          <h4><%= post_comment.name %><span>/<%= post_comment.created_at.to_time.strftime('%B %e at %l:%M %p') %></span></h4>
-          <%= post_comment.body %>
+          <h4><%= comment.name %><span>/<%= comment.created_at.to_time.strftime('%B %e at %l:%M %p') %></span></h4>
+          <%= comment.body %>
         </div>
       </div>
     </div>
@@ -19,15 +19,15 @@
 
   <div class="well add-comment">
     <h2 class="page-header">Add Comment</h2>
-    <%= form_for([@post, @post.post_comments.build]) do |f| %>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
   
       <div class="form-group">
-        <%= f.label :user_id %><br>
-        <%= f.text_field :user_id, class:'form-control' %>
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class:'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :postId %><br>
-        <%= f.text_field :post_id, class:'form-control' %>
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class:'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :body %><br>
