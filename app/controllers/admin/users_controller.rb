@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   before_action :verify_logged_in
+  # before_action :verify_is_admin_and_logged_in
   
   def index
     if params[:search]
@@ -10,7 +11,6 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def new
-    # @page_title = 'Add User'
     @user = User.new
   end
 
