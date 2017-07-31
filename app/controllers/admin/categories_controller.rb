@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::ApplicationController
-  # before_filter :verify_logged_in
+  before_action :verify_logged_in
 
   def index
     if params[:search]

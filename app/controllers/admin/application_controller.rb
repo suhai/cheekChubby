@@ -17,7 +17,7 @@ class Admin::ApplicationController < ActionController::Base
 
   def verify_logged_in
   	unless current_user
-  		redirect_to admin_login_path
+  		redirect_to root_path
   	end
   end
 end

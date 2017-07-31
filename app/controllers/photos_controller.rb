@@ -21,7 +21,11 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.all
+    if params[:search]
+      @photos = Photo.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
+    else
+      @photos = Photo.all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
+    end
     @categories = Category.all
   end
 
