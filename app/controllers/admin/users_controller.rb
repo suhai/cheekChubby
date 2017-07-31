@@ -1,6 +1,5 @@
 class Admin::UsersController < Admin::ApplicationController
-  before_action :verify_logged_in
-  # before_action :verify_is_admin_and_logged_in
+  before_action :verify_is_admin_or_not_logged_in
   
   def index
     if params[:search]
@@ -18,7 +17,7 @@ class Admin::UsersController < Admin::ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "#{@user.username} User Created"
-      redirect_to admin_users_path
+      redirect_to admin_photos_path
     else    
       render 'new'
     end

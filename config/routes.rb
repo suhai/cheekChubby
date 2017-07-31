@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :photos
   resources :post_comments, only: [:show, :create]
   resources :posts, only: [:index, :show]
+  resources :users, only: [:new]
 
   resources :posts do
     resources :post_comments
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
     resources :photos
     resources :post_comments
     resources :posts
-    resources :sessions
+    resources :sessions, only: [:new, :create, :destroy]
     resources :users
   end
 
