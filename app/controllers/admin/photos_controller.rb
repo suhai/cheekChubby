@@ -24,6 +24,23 @@ class Admin::PhotosController < Admin::ApplicationController
     end
   end
 
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    if params[:photo][:image].blank?
+      @photo.image = nil
+    end
+    if @photo.update(photo_params)
+      flash[:notice] = 'Photo updated'
+      redirect_to admin_photos_path
+    else    
+      render 'new'
+    end
+  end
+
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy

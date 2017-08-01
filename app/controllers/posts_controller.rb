@@ -8,6 +8,24 @@ class PostsController < ApplicationController
     @categories = Category.all
   end
 
+  def new
+    @page_title = 'Add Post'
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if params[:post][:image].blank?
+      @post.image = nil
+    end
+    if @post.save
+      flash[:notice] = "#{@post.title} Post Created"
+      redirect_to admin_posts_path
+    else    
+      render 'new'
+    end
+  end
+
   def show
     @post = Post.find(params[:id])
     @categories = Category.all

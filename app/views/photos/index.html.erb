@@ -1,4 +1,22 @@
-<%= render 'partials/image' %>
+<section>
+  <div class="container">
+    <!-- Alerts & Messages -->
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+    <%= yield %>
+  </div><!-- /.container -->
+</section>
+
+<div id="navbar" class="collapse navbar-collapse">
+  <ul class="nav navbar-nav pull-right">
+    <li><%= link_to 'Upload Photo', upload_path %></li>
+  </ul>
+</div><!--/.nav-collapse -->
 
 <div id="gallery">
   <h2>All Photos</h2>

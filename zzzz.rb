@@ -21,6 +21,9 @@
             <span class="icon-bar"></span>
           </button>
         </div>
+
+  
+
         <div id="navbar" class="collapse navbar-collapse">
           
           <ul class="nav navbar-nav">
@@ -35,17 +38,26 @@
 
     <section>
       <div class="container">
-        <!-- Alerts & Messages -->
-        <% if flash[:notice] %>
-        <div class="alert alert-success"><%= flash[:notice] %></div>
-        <% end %>
-        <% if flash[:alert] %>
-          <div class="alert alert-danger"><%= flash[:alert] %></div>
-        <% end %>
-        <%= yield %>
-      </div>
-          
+        <div class="row">
+          <div class="col-md-8">
+            <!-- Alerts & Messages -->
+            <% if flash[:notice] %>
+              <div class="alert alert-success"><%= flash[:notice] %></div>
+            <% end %>
 
+            <% if flash[:alert] %>
+              <div class="alert alert-danger"><%= flash[:alert] %></div>
+            <% end %>
+
+            <%= yield %>
+          </div>
+          
+          <div class="col-md-4">
+            <%= render 'partials/sidebar' %>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <%= render 'partials/footer' %>

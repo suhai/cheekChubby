@@ -7,4 +7,26 @@
   <% end %>
 </div>
 
-<p>HELLO FROM PHOTOS</p>
+<h2 class="page-header">Photos<%= link_to "Create New", new_admin_photo_path, class:'btn btn-success pull-right' %></h2>
+<% if @photos.exists? %>
+  <table class="table table-striped">
+    <tr>
+      <th>Photo Title</th>
+      <th>Photo Category</th>
+      <th>Date Created</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @photos.each do |photo|%>
+    <tr>
+      <td><%= photo.image_title %></td>
+      <td><%= photo.category.name %></td>
+      <td><%= photo.created_at.to_time.strftime('%B %e at %l:%M %p') %></td>
+      <td><%= link_to "Edit", edit_admin_photo_path(photo), class:'btn btn-primary'   %> <%= link_to "Delete", admin_photo_path(photo), class:'btn btn-danger',   method: :delete, data: {confirm: 'Are you sure?'}  %></td>
+    </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @photos %>
+<% else %>
+  <p>There are no photos.</p>
+<% end %>

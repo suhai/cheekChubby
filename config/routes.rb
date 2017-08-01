@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
   get 'upload' => 'photos#new', :as => :upload
-  resources :categories, only: [:show, :index]
-  resources :photo_comments, only: [:show, :create]
+  resources :categories
+  resources :photo_comments, only: [:show, :create, :destroy]
   resources :photos
-  resources :post_comments, only: [:show, :create]
-  resources :posts, only: [:index, :show]
+  resources :post_comments, only: [:show, :create, :destroy]
+  resources :posts
   resources :users, only: [:new]
 
   resources :posts do

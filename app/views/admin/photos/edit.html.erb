@@ -1,31 +1,4 @@
-<section>
-	<div class="container">
-		<!-- Alerts & Messages -->
-		<% if flash[:notice] %>
-			<div class="alert alert-success"><%= flash[:notice] %></div>
-		<% end %>
-
-		<% if flash[:alert] %>
-			<div class="alert alert-danger"><%= flash[:alert] %></div>
-		<% end %>
-		<%= yield %>
-	</div><!-- /.container -->
-</section>
-
-<section>
-  <div class="container">
-    <!-- Alerts & Messages -->
-    <% if flash[:notice] %>
-      <div class="alert alert-success"><%= flash[:notice] %></div>
-    <% end %>
-
-    <% if flash[:alert] %>
-      <div class="alert alert-danger"><%= flash[:alert] %></div>
-    <% end %>
-
-  </div><!-- /.container -->
-</section>
-<h2>Upload Photo</h2>
+<h2>Edit Photo</h2>
 
 <%= form_for @photo, :html => {:multipart => true} do |f| %>
 	<!-- Check for errors -->
@@ -64,5 +37,7 @@
 	<br>
 
 	<%= f.submit "Submit", class:'btn btn-primary' %>
-	<%=link_to "Cancel", photos_path, class:'btn btn-default' %>
+	<%=link_to "Cancel", admin_photos_path, class:'btn btn-default' %>
 <% end %>
+
+

@@ -16,8 +16,9 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import "lightbox";
+@import 'main';
+@import 'photos';
 @import 'partials/variables';
 @import 'partials/footer';
-@import 'partials/photo_main';
 @import 'partials/signup_login';
-@import 'main';
+
