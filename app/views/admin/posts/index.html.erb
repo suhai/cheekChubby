@@ -3,11 +3,11 @@
     Logged In as <%= current_user.username %>
     <%= link_to 'Log Out', root_path, class:'btn btn-info' %>
     <% else %>
-    <%= link_to 'Log In', admin_login_path %>
+    <%= link_to 'Log In', admin_login_path, class:'btn btn-info' %>
   <% end %>
 </div>
 
-<h2 class="page-header">Posts<%= link_to "Create New", new_admin_post_path, class:'btn btn-success pull-right' %></h2>
+<h2 class="page-header">Posts<%= link_to "Add New Post", new_admin_post_path, class:'btn btn-success pull-right' %></h2>
 <% if @posts.exists? %>
   <table class="table table-striped">
     <tr>

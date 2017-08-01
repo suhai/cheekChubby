@@ -3,7 +3,7 @@
     Logged In as <%= current_user.username %>
     <%= link_to 'Log Out', root_path, class:'btn btn-info' %>
     <% else %>
-    <%= link_to 'Log In', admin_login_path %>
+    <%= link_to 'Log In', admin_login_path, class:'btn btn-info' %>
   <% end %>
 </div>
 
