@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     user = User.authenticate(params[:username], params[:password])
     if user
       session[:user_id] = user.id 
-      redirect_to photos_path, :notice => 'Logged In'
+      redirect_to photos_path
     else
       flash.now.alert = 'Invalid username or password'
 			redirect_to new_session_path
@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
   def logout!
     session[:user_id] = nil
     # redirect_to admin_login_path :notice => 'Logged Out'
-    redirect_to root_path :notice => 'Logged Out'
+    redirect_to root_path
   end
 end

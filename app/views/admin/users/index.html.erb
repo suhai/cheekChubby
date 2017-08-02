@@ -1,7 +1,7 @@
 <div id="user_nav" class="pull-right"> 
   <% if current_user %>
-    Logged In as <%= current_user.username %>
-    <%= link_to 'Log Out', root_path, class:'btn btn-info' %>
+    <h5>Logged In as <%= current_user.username.capitalize %></h5>
+    <%= link_to 'Log Out', admin_logout_path, class:'btn btn-info pull-right' %>
     <% else %>
     <%= link_to 'Log In', admin_login_path, class:'btn btn-info' %>
   <% end %>

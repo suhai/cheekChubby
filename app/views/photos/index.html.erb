@@ -11,19 +11,19 @@
     <%= yield %>
   </div><!-- /.container -->
 </section>
-<% if current_user %>
-Logged In as <%= current_user.username %>
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav pull-right">
-      <li><%= link_to 'Upload Photo', upload_path %></li>
-    </ul>
-    <ul>
-      <li><%= link_to 'Log Out', admin_logout_path, class:'btn btn-info' %></li>
-    </ul>
-  </div><!--/.nav-collapse -->
-<% end %>
+
+<div id="user_nav" class="pull-right"> 
+  <% if current_user %>
+    <h4><%= link_to 'Log Out', admin_logout_path, class:'btn btn-primary pull-right butt-space' %></h4>
+    <h4><%= link_to 'Upload Photo', upload_path, class:'btn btn-info pull-right butt-space' %></h4>
+  <% end %>
+</div>
 
 <div id="gallery">
+<% if current_user %>
+  <h5>Logged In as <%= current_user.username.capitalize %></h5>
+<% end %>
+
   <h2>All Photos</h2>
 
   <% if @photos.exists? %>

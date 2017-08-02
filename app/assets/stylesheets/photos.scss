@@ -16,6 +16,10 @@ h1, h2{
 	margin-bottom:30px;
 }
 
+.butt-space {
+	margin-bottom: .5em;
+}
+
 #gallery img{
 	width:100%;
 }
@@ -123,4 +127,14 @@ footer{
 .photo-img{
 	background:#7a548f;
 	z-index:0;
+}
+
+
+.photo-upload-form {
+	height: 100%;
+  width: 90%;
+	background-color: powderblue;
+	margin: auto;
+  border: 3px solid green;
+  padding: 10px;
 }
