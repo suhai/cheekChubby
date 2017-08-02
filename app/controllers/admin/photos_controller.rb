@@ -36,7 +36,7 @@ class Admin::PhotosController < Admin::ApplicationController
     if @photo.update(photo_params)
       redirect_to admin_photos_path
     else    
-      render 'new'
+      render 'edit'
     end
   end
 

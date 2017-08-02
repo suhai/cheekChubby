@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'upload' => 'photos#new', :as => :upload
   # resources :categories
   resources :photo_comments, only: [:show, :create, :destroy]
-  resources :photos, only: [:new, :create]
+  resources :photos, only: [:new, :create, :update]
   resources :post_comments, only: [:show, :create, :destroy]
   resources :posts, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
