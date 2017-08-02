@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :post_comments
     resources :posts
     resources :sessions, except: [:index, :edit]
-    resources :users, except: [:destroy]
+    resources :users
   end
 
   namespace :admin do
