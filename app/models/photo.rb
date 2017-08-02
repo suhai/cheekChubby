@@ -26,7 +26,10 @@ class Photo < ApplicationRecord
   mount_uploader :image, PhotoUploader
 	before_save :update_photo_attributes
 
-
+	def self.search(query)
+    where("image_title like ? OR image_description like ? OR tags like ?", "%#{query}%", "%#{query}%", "%#{query}%")
+	end
+	
 	private
 	def update_photo_attributes
 		if image.present? && image_changed?

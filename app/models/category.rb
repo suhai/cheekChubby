@@ -17,6 +17,5 @@ class Category < ApplicationRecord
 
   def self.search(query)
     where("name like ?", "%#{query}%")
-    # where("name like ? OR image_title like ?", "%#{query}%", "%#{query}%")
   end
 end

@@ -24,4 +24,7 @@ class Post < ApplicationRecord
   validates :category_id, presence: true
   validates :body, presence: true
 
+  def self.search(query)
+    where("title like ? OR body like ? OR tags like ?", "%#{query}%", "%#{query}%", "%#{query}%")
+  end
 end

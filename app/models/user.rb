@@ -27,7 +27,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true
 
   def self.search(query)
-    where("username like ?", "%#{query}%")
+    where("username like ? OR email like ?", "%#{query}%", "%#{query}%")
   end
 
   def self.authenticate(username, password)
