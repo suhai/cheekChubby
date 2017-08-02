@@ -8,14 +8,14 @@
   <% end %>
 </div>
 
-<h2 class="page-header">Photos<%= link_to "Add New Photo", new_admin_photo_path, class:'btn btn-success pull-right' %></h2>
+<h2 class="page-header">Manage Photos</h2>
 <% if @photos.exists? %>
   <table class="table table-striped">
     <tr>
       <th>Photo Title</th>
       <th>Photo Category</th>
       <th>Date Created</th>
-      <th>Actions</th>
+      <th><%= link_to "Add New Photo", new_admin_photo_path, class:'btn btn-success' %></th>
     </tr>
 
     <% @photos.each do |photo|%>

@@ -7,14 +7,14 @@
   <% end %>
 </div>
 
-<h2 class="page-header">Posts<%= link_to "Add New Post", new_admin_post_path, class:'btn btn-success pull-right' %></h2>
+<h2 class="page-header">Manage Posts</h2>
 <% if @posts.exists? %>
   <table class="table table-striped">
     <tr>
       <th>Post Title</th>
       <th>Post Category</th>
       <th>Date Created</th>
-      <th>Actions</th>
+      <th><%= link_to "Add New Post", new_admin_post_path, class:'btn btn-success' %></th>
     </tr>
 
     <% @posts.each do |post|%>

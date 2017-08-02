@@ -36,7 +36,7 @@ class Admin::ApplicationController < ActionController::Base
     user = User.authenticate(params[:username], params[:password])
     if user
       session[:user_id] = user.id 
-      redirect_to admin_photos_path
+      redirect_to admin_users_path
     else
       flash.now.alert = 'Invalid username or password'
 			render 'new' 

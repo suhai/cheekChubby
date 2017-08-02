@@ -7,14 +7,14 @@
   <% end %>
 </div>
 
-<h2 class="page-header">Users<%= link_to "Add New User", new_admin_user_path, class:'btn btn-success pull-right' %></h2>
+<h2 class="page-header">Manage Users</h2>
 <% if @users.exists? %>
   <table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Date Created</th>
-    <th>Actions</th>
+    <th><%= link_to "Add New User", new_admin_user_path, class:'btn btn-success' %></th>
   </tr>
   <% @users.each do |user| %>
     <tr>
