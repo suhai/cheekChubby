@@ -4,9 +4,9 @@ class Admin::PhotosController < Admin::ApplicationController
   
   def index
     if params[:search]
-      @photos = Photo.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
+      @photos = Photo.search(params[:search]).all.order('image_title ASC').paginate(:per_page => 10, :page => params[:page])
     else
-      @photos = Photo.all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
+      @photos = Photo.all.order('image_title ASC').paginate(:per_page => 10, :page => params[:page])
     end
     @categories = Category.all
   end
@@ -18,7 +18,6 @@ class Admin::PhotosController < Admin::ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      flash[:notice] = "Photo Created"
       redirect_to admin_photos_path
     else
       render 'new'
@@ -35,7 +34,6 @@ class Admin::PhotosController < Admin::ApplicationController
       @photo.image = nil
     end
     if @photo.update(photo_params)
-      flash[:notice] = 'Photo updated'
       redirect_to admin_photos_path
     else    
       render 'new'

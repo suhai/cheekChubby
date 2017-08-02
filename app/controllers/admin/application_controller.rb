@@ -45,7 +45,6 @@ class Admin::ApplicationController < ActionController::Base
 
   def logout!
     session[:user_id] = nil
-    # redirect_to admin_login_path :notice => 'Logged Out'
     redirect_to root_path
   end
 end

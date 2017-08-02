@@ -4,9 +4,9 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def index
     if params[:search]
-      @categories = Category.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
+      @categories = Category.search(params[:search]).all.order('name ASC').paginate(:per_page => 10, :page => params[:page])
     else
-      @categories = Category.all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
+      @categories = Category.all.order('name ASC').paginate(:per_page => 10, :page => params[:page])
     end
   end
 
@@ -23,7 +23,6 @@ class Admin::CategoriesController < Admin::ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "#{@category.name} Category Created"
       redirect_to admin_categories_path
     else    
       render 'new'
@@ -40,7 +39,6 @@ class Admin::CategoriesController < Admin::ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update(category_params)
-      flash[:notice] = 'Category updated'
       redirect_to admin_categories_path
     else    
       render 'edit'
