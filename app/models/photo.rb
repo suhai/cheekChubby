@@ -17,9 +17,7 @@
 
 class Photo < ApplicationRecord
   has_many :photo_comments
-
   belongs_to :user
-
   belongs_to :category,
     primary_key: :id,
     foreign_key: :category_id,
