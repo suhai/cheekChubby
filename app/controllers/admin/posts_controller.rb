@@ -1,5 +1,6 @@
 class Admin::PostsController < Admin::ApplicationController
-  # before_action :verify_logged_in
+  before_action :verify_logged_in
+  before_action :verify_is_admin
 
   def index
     if params[:search]
@@ -26,9 +27,6 @@ class Admin::PostsController < Admin::ApplicationController
       render 'new'
     end
   end
-
-  # def show
-  # end
 
   def edit
     @post = Post.find(params[:id])

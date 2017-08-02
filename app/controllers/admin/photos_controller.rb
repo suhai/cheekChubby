@@ -1,5 +1,6 @@
 class Admin::PhotosController < Admin::ApplicationController
-  # before_action :verify_logged_in
+  before_action :verify_logged_in
+  before_action :verify_is_admin
   
   def index
     if params[:search]

@@ -3,12 +3,14 @@ class Admin::ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	layout 'admin/application'
 
+	helper_method :login!
+	helper_method :logout!
 	helper_method :current_user
+	helper_method :verify_logged_in
 	helper_method :getCategoryNav
 
 
 	private
-	
 	def getCategoryNav
   	@categoryNav = Category.all
 	end
@@ -17,17 +19,34 @@ class Admin::ApplicationController < ActionController::Base
 		@current_user ||=User.find(session[:user_id]) if session[:user_id]
 	end
 
-  def verify_logged_in
-		unless current_user 
-			redirect_to root_path 
-		end
-  end
-	
-	def verify_is_admin_or_not_logged_in
-  	unless !current_user || current_user.is_admin
-  		redirect_to root_path
+	def verify_logged_in
+  	unless current_user
+  		redirect_to admin_login_path
   	end
 	end
 	
+	def verify_is_admin
+  	unless current_user.is_admin
+  		redirect_to root_path
+  	end
+	end	
+
+
+	def login!
+    user = User.authenticate(params[:username], params[:password])
+    if user
+      session[:user_id] = user.id 
+      redirect_to admin_photos_path, :notice => 'Logged In'
+    else
+      flash.now.alert = 'Invalid username or password'
+			render 'new' 
+    end
+	end
+
+  def logout!
+    session[:user_id] = nil
+    # redirect_to admin_login_path :notice => 'Logged Out'
+    redirect_to root_path :notice => 'Logged Out'
+  end
 end
   

@@ -13,12 +13,12 @@ class PhotosController < ApplicationController
     end
   end
 
-  def destroy
-    @photo = Photo.find(params[:id])
-    @photo.destroy
-    flash[:notice] = "Photo Removed"
-    redirect_to photos_path
-  end
+  # def destroy
+  #   @photo = Photo.find(params[:id])
+  #   @photo.destroy
+  #   flash[:notice] = "Photo Removed"
+  #   redirect_to photos_path
+  # end
 
   def index
     if params[:search]

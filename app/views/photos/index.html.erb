@@ -11,20 +11,24 @@
     <%= yield %>
   </div><!-- /.container -->
 </section>
-
-<div id="navbar" class="collapse navbar-collapse">
-  <ul class="nav navbar-nav pull-right">
-    <li><%= link_to 'Upload Photo', upload_path %></li>
-  </ul>
-</div><!--/.nav-collapse -->
+<% if current_user %>
+Logged In as <%= current_user.username %>
+  <div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav pull-right">
+      <li><%= link_to 'Upload Photo', upload_path %></li>
+    </ul>
+    <ul>
+      <li><%= link_to 'Log Out', admin_logout_path, class:'btn btn-info' %></li>
+    </ul>
+  </div><!--/.nav-collapse -->
+<% end %>
 
 <div id="gallery">
   <h2>All Photos</h2>
-  <% if @photos.exists? %>
 
+  <% if @photos.exists? %>
     <% @photos.each_slice(4) do |images| %>
       <div class="row">
-      
         <% images.each do |image| %>
           <div class="col-md-3">
             <div class="photo photo-type-line">
@@ -40,11 +44,10 @@
             </div>
           </div>     
         <% end %>
-
       </div>
     <% end %>
     
   <% else %>
-    <p>There are no Photos</p>
+    <p>No Photos Yet</p>
   <% end %>
 </div>

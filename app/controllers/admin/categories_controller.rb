@@ -1,5 +1,6 @@
 class Admin::CategoriesController < Admin::ApplicationController
-  # before_action :verify_logged_in
+  before_action :verify_logged_in
+  before_action :verify_is_admin
 
   def index
     if params[:search]
@@ -16,7 +17,6 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def new
-    # @page_title = 'Add Category'
     @category = Category.new
   end
 
