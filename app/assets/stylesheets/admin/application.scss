@@ -15,11 +15,13 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import "../lightbox";
-@import '../partials/variables';
-@import '../partials/footer';
-@import '../partials/signup_login';
-@import '../main';
+@import "lightbox";
+@import 'main';
+@import 'photos';
+@import 'partials/variables';
+@import 'partials/footer';
+@import 'partials/signup_login';
+
 
 
 @import "froala_editor.min.css";
