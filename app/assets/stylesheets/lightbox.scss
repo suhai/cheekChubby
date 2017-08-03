@@ -1,15 +1,9 @@
 /* Preload images */
-// body:after {
-//   content: url(../images/lightbox/close.png) url(../images/lightbox/loading.gif) url(../images/lightbox/prev.png) url(../images/lightbox/next.png);
-//   display: none;
-// }
-
-
 body:after {
-  content: url(http://cheekchubby.herokuapp.com/images/lightbox/close.png) url(http://cheekchubby.herokuapp.com/images/lightbox/loading.gif) url(http://cheekchubby.herokuapp.com/images/lightbox/prev.png) url(http://cheekchubby.herokuapp.com/images/lightbox/next.png);
+  content: url(http://www.../images/lightbox/close.png) url(http://www.../images/lightbox/loading.gif) url(http://www.../images/lightbox/prev.png) url(http://www.../images/lightbox/next.png);
   display: none;
-  
 }
+
 
 .lightboxOverlay {
   position: absolute;
