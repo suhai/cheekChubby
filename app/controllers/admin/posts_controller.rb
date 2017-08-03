@@ -31,6 +31,13 @@ class Admin::PostsController < Admin::ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @categories = Category.all
+    @post_comment = PostComment.new
+    @post_comments = PostComment.all
+  end
+
   def update
     @post = Post.find(params[:id])
     if params[:post][:image].blank?
