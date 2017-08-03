@@ -42,9 +42,10 @@ gem 'jquery-rails'
 gem 'rmagick'
 gem "mini_magick"
 gem 'annotate'
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'pry-rails'
-gem 'fog-aws'
+gem 'fog-aws', group: :production
+gem 'carrierwave', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
