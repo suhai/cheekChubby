@@ -44,6 +44,7 @@ gem "mini_magick"
 gem 'annotate'
 # gem 'carrierwave'
 gem 'pry-rails'
+gem 'fog', '~> 1.36.0'
 gem 'fog-aws', group: :production
 gem 'carrierwave', '~> 1.0'
 # Use Capistrano for deployment
