@@ -17,7 +17,7 @@
   <h5>Logged In as <%= current_user.username.capitalize %></h5>
 <% end %>
 
-  <h2>All Photos</h2>
+  <h2>Sample Photos</h2>
 
   <% if @photos.exists? %>
     <% @photos.each_slice(4) do |images| %>
