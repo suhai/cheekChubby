@@ -138,8 +138,11 @@ small{
 }
 
 .home-image {
-  width:64em;
-  height:40em;
+  width:100%;
+  // height:40em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-header {

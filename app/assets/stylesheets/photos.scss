@@ -60,10 +60,16 @@ footer{
 .photo-hover .mask,
 .photo-img,
 .photo-info{
-	width:243px;
+	// width:243px;
+	width:100%;
 	height:180px;
 	// width:293px; # this is the alternate parameter
 	// height:220px; # this is an alternate parameter
+
+  // height:40em;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 .photo-img,
