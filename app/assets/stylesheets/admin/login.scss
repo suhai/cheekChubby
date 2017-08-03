@@ -1,15 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "partials/variables";
 
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #36424a;
+  padding-top: 4em;
+  padding-bottom: 5em;
+  background-color: $aag;
   color:#fff;
 }
 
 input{
-  margin-bottom:10px;
+  margin-bottom: 1em;
 }
 
 .btn, input{
@@ -17,8 +18,29 @@ input{
   border-radius:0;
 }
 
-.btn-primary{
-  background:#ff953f;
+.btn-primary {
+  background: $abf;
+}
+
+.btn-cancel {
+  background: $aap;
+  color: white;
+}
+
+.floating-box1 {
+  display: inline-block;
+  width: 8.5em;
+  height: 2.6em;
+  margin: .5em 6.5em 2em 0em;
+  border: .1em solid #73AD21;  
+}
+
+.floating-box2 {
+  display: inline-block;
+  width: 8.5em;
+  height: 2.6em;
+  margin: .5em 0em 2em 6.5em;
+  border: .1em solid #73AD21;  
 }
 
 .btn:hover{
@@ -27,9 +49,17 @@ input{
 }
 
 .form-signin {
-  max-width: 330px;
-  padding: 15px;
+  // max-width: 330px;
+  // padding: 15px;
   margin: 0 auto;
+
+  height: 100%;
+  width: 50%;
+	background-color: powderblue;
+	margin: auto;
+  border: .5em solid $military-green;
+  padding: 1em;
+  margin-top: 5em;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {

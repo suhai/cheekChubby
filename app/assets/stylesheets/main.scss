@@ -2,7 +2,7 @@
 
 body{
   font-family: 'Arial', sans-serif;
-  background: $background-color;
+  background: #fff;
   line-height: 1.6em;
   margin-bottom: 5em;
 }
@@ -10,7 +10,7 @@ body{
 .navbar{
   overflow: auto;
   min-height: 100px;
-  background: $primary-color;
+  background: $aee;
   color: #fff;
   font-size: 18px;
   border: 0;
@@ -81,10 +81,10 @@ body{
   background: $primary-btn-color;
 }
 
-.btn:hover{
-  background: #ccc;
-  background: #fff;
-}
+// .btn:hover{
+//   background: #ccc;
+//   background: #fff;
+// }
 
 .post{
   border: 1px #ccc solid;
@@ -125,4 +125,29 @@ small{
 
 .comments img{
   width: 100%;
+}
+
+
+.landing-page {
+  background-color: $grayish;
+}
+
+.home-pager {
+  // margin-bottom: 4em;
+  text-align: center;
+}
+
+.home-image {
+  width:64em;
+  height:40em;
+}
+
+.home-header {
+	// border-left:5px #666 solid;
+	border-bottom: 1px #666 solid;
+	padding: 0 0 5px 10px;
+	margin-bottom:30px;
+  text-align: center;
+  font-size: 4em;;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }

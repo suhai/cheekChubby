@@ -1,21 +1,25 @@
 
-<% if current_user %>
-Logged In as <%= current_user.username %>
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav pull-right">
-      <li><%= link_to 'Log Out', admin_logout_path, class:'btn btn-info' %></li>
-    </ul>
-  </div><!--/.nav-collapse -->
-<% else %>
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav pull-right">
-      <li><%= link_to "Sign Up", new_user_path, class:'btn btn-info pull-right' %> <%= link_to "User Login", new_session_path, class:'btn btn-primary pull-right' %></li>
-    </ul>
-  </div><!--/.nav-collapse -->
-<% end %>
+  <% if current_user %>
+  Logged In as <%= current_user.username %>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to 'Log Out', admin_logout_path, class:'btn btn-cancel' %></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  <% else %>
+    <div>
+      <%= link_to "User Login", new_session_path, class:'btn btn-primary pull-right' %>
+      <%= link_to "Sign Up", new_user_path, class:'btn btn-info pull-left' %>
+    </div><!--/.nav-collapse -->
+  <% end %>
 
-<div>
-  <h1 style="color:tomato;text-align:center;">Home#page</h1>
-  <p style="text-align:center;">Find me in app/views/home/page.html.erb</p>
-</div>
+  <div class='home-pager'> 
+    <ab class='home-header'>cheekChubby!</ab>
+    <h3>Read, Post, Comment, and Engage With The World Around You.</h3>
+  </div>
+   
+
+  <img class='home-image'src="https://res.cloudinary.com/swy/image/upload/v1501752105/pexels-photo-28462_xa3nxw.jpg" alt="">
+
+
 

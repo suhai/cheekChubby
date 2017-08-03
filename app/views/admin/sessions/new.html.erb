@@ -1,6 +1,3 @@
-<div>
-  <h1>ADMIN PATH: SOME CONTENT TO GO HERE</h1>
-</div>
 
 <%= form_tag admin_sessions_path, :class => 'form-signin' do %>
 	<h2 class="form-signin-heading">CheekChubby</h2>
@@ -15,6 +12,7 @@
     <%= text_field_tag :username, params[:username], class:'form-control',placeholder:'Username' %>
     <%= password_field_tag :password, '',class:'form-control', placeholder:'Password' %>
   </p>
-  <%= submit_tag "Log in", class:'btn btn-lg btn-primary' %>
-  <%=link_to "Cancel", root_path, class:'btn btn-lg btn-danger' %>
+
+  <%= submit_tag "Log in", class:'btn btn-primary' %>
+  <%=link_to "Cancel", root_path, class:'btn btn-default' %>
 <% end %>
