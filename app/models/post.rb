@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   belongs_to :category
   has_many :post_comments
 
-  has_attached_file :image, :default_url => ":style/tikld.png"
+  has_attached_file :image, :default_url => "https://res.cloudinary.com/swy/image/upload/v1499750590/images/pexels-photo.jpg"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   validates :title, presence: true
