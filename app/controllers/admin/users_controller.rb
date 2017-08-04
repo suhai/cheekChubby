@@ -38,6 +38,11 @@ class Admin::UsersController < Admin::ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    
+    @user.posts.each do |post|
+      post.destroy
+    end
+
     @user.destroy
     flash[:notice] = "#{@user.username} User Removed"
     redirect_to admin_users_path
