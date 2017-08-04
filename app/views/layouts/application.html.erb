@@ -29,6 +29,8 @@
             <li class="<%= params[:controller] == 'posts' ? 'active' : '' %>"><%= link_to "Posts", posts_path %></li>
 
             <li class="<%= params[:controller] == 'photos' ? 'active' : '' %>"><%= link_to "Photos", photos_path %></li>
+            
+            <li class="<%= params[:controller] == '' ? 'active' : '' %>"><%= link_to "Admin Area", admin_users_path %></li>
 
           </ul>
 
