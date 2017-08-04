@@ -1,0 +1,43 @@
+.signup {
+	height: 100%;
+  width: 50%;
+	background-color: powderblue;
+	margin: auto;
+  border: .5em solid $abg;
+  padding: 1em;
+}
+
+.signup-header {
+  text-align: center;
+  font-family: Courier New, Courier, monospace;
+}
+
+.btn-primary {
+  background: $abf;
+}
+
+.btn-cancel {
+  background: $aap;
+  color: white;
+}
+
+.btn-addnew {
+  background: $ada;
+  color: white;
+}
+
+.floating-box1 {
+  display: inline-block;
+  width: 8.5em;
+  height: 2.6em;
+  margin: 0em 5.7em 2em 0em;
+  border: .1em solid $abg;  
+}
+
+.floating-box2 {
+  display: inline-block;
+  width: 8.5em;
+  height: 2.6em;
+  margin: 0em 0em 2em 5.8em;
+  border: .1em solid $abg;  
+}
