@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
     end
   end
 
-   def update
+  def update
     @photo = Photo.find(params[:id])
     if params[:photo][:image].blank?
       @photo.image = nil
@@ -30,7 +30,7 @@ class PhotosController < ApplicationController
       redirect_to admin_photos_path
     else    
       render 'edit'
-    end
+    end 
   end
 
   # def destroy

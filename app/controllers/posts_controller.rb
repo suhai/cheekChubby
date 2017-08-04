@@ -31,4 +31,9 @@ class PostsController < ApplicationController
     @post_comment = PostComment.new
     @post_comments = PostComment.all
   end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :category_id, :user_id, :tags, :image, :body)
+  end
 end
