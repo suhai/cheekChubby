@@ -133,20 +133,25 @@ small{
 }
 
 .home-pager {
-  // margin-bottom: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   text-align: center;
+  width: 100%;
 }
 
 .home-image {
-  width:64em;
-  height:40em;
+  width:100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-header {
 	// border-left:5px #666 solid;
-	border-bottom: 1px #666 solid;
-	padding: 0 0 5px 10px;
-	margin-bottom:30px;
+  border-bottom: 1px #666 dashed;
+  // width: 100%;
+	padding: 0 2em;
+	// margin-bottom:30px;
   text-align: center;
   font-size: 4em;;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif

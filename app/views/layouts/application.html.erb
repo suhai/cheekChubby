@@ -30,6 +30,8 @@
 
             <li class="<%= params[:controller] == 'photos' ? 'active' : '' %>"><%= link_to "Photos", photos_path %></li>
 
+            <li class="<%= params[:controller] == '' ? 'active' : '' %>"><%= link_to "Admin Section", admin_users_path %></li>
+
           </ul>
 
           <%= render 'partials/search' %>
