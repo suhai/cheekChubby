@@ -15,7 +15,7 @@ cheekChubby is a Ruby / Rails application that was designed for users to access 
 
 ### 
 
-```js
+```rb
 class Admin::ApplicationController < ActionController::Base
 	before_action :getCategoryNav
 	protect_from_forgery with: :exception
