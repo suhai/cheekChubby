@@ -15,7 +15,9 @@ cheekChubby is a Ruby / Rails application that was designed for users to access 
 
 ### 
 
+// controllers/admin/application_controller.rb
 ```rb
+
 class Admin::ApplicationController < ActionController::Base
 	before_action :getCategoryNav
 	protect_from_forgery with: :exception
@@ -70,9 +72,9 @@ end
   
 ```
 
-
-```rb
 // views/photos/index.html.erb
+```rb
+
 
 <div id="user_nav" class="pull-right"> 
   <% if current_user %>
