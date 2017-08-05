@@ -38,6 +38,13 @@ class Admin::ApplicationController < ActionController::Base
 	  @current_user ||=User.find(session[:user_id]) if session[:user_id]
 	end
 
+  def verify_logged_in
+    unless current_user
+      redirect_to admin_login_path
+    end
+	  @current_user ||=User.find(session[:user_id]) if session[:user_id]
+	end
+
 	def verify_logged_in
     unless current_user
       redirect_to admin_login_path
