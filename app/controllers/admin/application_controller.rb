@@ -7,6 +7,7 @@ class Admin::ApplicationController < ActionController::Base
 	helper_method :logout!
 	helper_method :current_user
 	helper_method :verify_logged_in
+	helper_method :verify_is_admin
 	helper_method :getCategoryNav
 
 
