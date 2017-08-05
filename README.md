@@ -33,7 +33,7 @@ class Admin::ApplicationController < ActionController::Base
 
 	private
 	def getCategoryNav
-  	  @categoryNav = Category.all
+  	@categoryNav = Category.all
 	end
 	
 	def current_user
@@ -41,27 +41,27 @@ class Admin::ApplicationController < ActionController::Base
 	end
 
 	def verify_logged_in
-          unless current_user
-  	    redirect_to admin_login_path
-  	  end
+    unless current_user
+  		redirect_to admin_login_path
+  	end
 	end
 	
 	def verify_is_admin
-  	  unless current_user.is_admin
-  	    redirect_to root_path
-  	  end
+  	unless current_user.is_admin
+  		redirect_to root_path
+  	end
 	end	
 
 
 	def login!
-          user = User.authenticate(params[:username], params[:password])
-          if user
-            session[:user_id] = user.id 
-            redirect_to admin_users_path
-          else
-            flash.now.alert = 'Invalid username or password'
-            render 'new' 
-          end
+    user = User.authenticate(params[:username], params[:password])
+    if user
+      session[:user_id] = user.id 
+      redirect_to admin_users_path
+    else
+      flash.now.alert = 'Invalid username or password'
+			render 'new' 
+    end
 	end
 
   def logout!
