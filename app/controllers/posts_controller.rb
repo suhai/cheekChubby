@@ -25,6 +25,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def create
+    @post = Post.new(post_params)
+    if params[:post][:image].blank?
+      @post.image = nil
+    end
+    if @post.save
+      redirect_to posts_path
+    else    
+      render 'new'
+    end
+  end
+
   def show
     @post = Post.find(params[:id])
     @categories = Category.all

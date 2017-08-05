@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::ApplicationController
   before_action :verify_logged_in
-  before_action :verify_is_admin
+  # before_action :verify_is_admin
 
   def index
     if params[:search]
@@ -21,7 +21,7 @@ class Admin::PostsController < Admin::ApplicationController
       @post.image = nil
     end
     if @post.save
-      redirect_to admin_posts_path
+      redirect_to posts_path
     else    
       render 'new'
     end
