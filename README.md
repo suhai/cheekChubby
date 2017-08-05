@@ -39,9 +39,12 @@ class Admin::ApplicationController < ActionController::Base
 	end
 
 	def verify_logged_in
-  	unless current_user
-  		redirect_to admin_login_path
-  	end
+    unless current_user
+      redirect_to admin_login_path
+    end
+    unless  current_user
+  	  redirect_to admin_login_path
+    end
 	end
 	
 	def verify_is_admin
