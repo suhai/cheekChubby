@@ -33,7 +33,7 @@ class Admin::ApplicationController < ActionController::Base
 
 	private
 	def getCategoryNav
-  	@categoryNav = Category.all
+  	  @categoryNav = Category.all
 	end
 	
 	def current_user
@@ -41,13 +41,13 @@ class Admin::ApplicationController < ActionController::Base
 	end
 
 	def verify_logged_in
-    unless current_user
+    if !current_user
   		redirect_to admin_login_path
   	end
 	end
 	
 	def verify_is_admin
-  	unless current_user.is_admin
+  	if !current_user.is_admin
   		redirect_to root_path
   	end
 	end	
