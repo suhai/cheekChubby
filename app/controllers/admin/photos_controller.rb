@@ -43,7 +43,6 @@ class Admin::PhotosController < Admin::ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-    flash[:notice] = "Photo Removed"
     redirect_to admin_photos_path
   end
 
