@@ -20,7 +20,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def default_url(*args)
     # For Rails 3.1+ asset pipeline compatibility:
     # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-    ActionController::Base.helpers.asset_path("https://res.cloudinary.com/swy/image/upload/v1499750293/images/parachute-skydiving-parachuting-jumping-128880.jpg")
+    ActionController::Base.helpers.asset_path("https://res.cloudinary.com/swy/image/upload/v1502051111/pexels-photo-26670_gufn4d.jpg")
   
     # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
